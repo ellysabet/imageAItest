@@ -3,7 +3,7 @@
 // - Vercel 프로젝트 설정 > Environment Variables 에 GEMINI_API_KEY를 등록해두면
 //   process.env.GEMINI_API_KEY로 안전하게 읽을 수 있다.
 
-const MODEL = 'gemini-2.5-flash'; // 필요하면 최신 모델명으로 교체 가능 (예: gemini-3.5-flash-lite)
+const MODEL = 'gemini-3.1-flash-lite'; // 필요하면 최신 모델명으로 교체 가능 (예: gemini-3.5-flash-lite)
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
