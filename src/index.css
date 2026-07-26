@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+  --bg-deep: #241e2e;
+  --bg-soft: #2e2740;
+  --panel: #352d47;
+  --accent-gold: #f3b562;
+  --accent-coral: #e88c7d;
+  --text-main: #f5efe6;
+  --text-muted: #b8afc4;
+  --danger: #f28b82;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 50% -10%, var(--bg-soft), var(--bg-deep) 60%);
+  color: var(--text-main);
+  font-family: 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Gowun Batang', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0 0 40px;
+}
+
+.emotion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+textarea {
+  resize: none;
+  border: none;
+  border-bottom: 1px dashed rgba(245, 239, 230, 0.35);
+  background: transparent;
+  color: var(--text-main);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 8px 4px 14px;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: rgba(184, 175, 196, 0.7);
+}
+
+button {
+  align-self: center;
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-coral));
+  color: #241e2e;
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: var(--danger);
+  margin-top: 20px;
+  font-size: 0.92rem;
+}
+
+.result {
+  margin-top: 40px;
+  animation: fade-in 0.5s ease both;
+}
+
+.emotion-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(243, 181, 98, 0.15);
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.comfort-message {
+  font-family: 'Gowun Batang', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin: 0 0 28px;
+}
+
+.image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  box-shadow: 0 0 80px -10px rgba(243, 181, 98, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loading-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result {
+    animation: none;
+  }
+}
